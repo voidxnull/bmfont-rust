@@ -90,8 +90,8 @@ impl BMFont {
         self.line_height
     }
 
-    pub fn pages(&self) -> Vec<String> {
-        self.pages.iter().map(|p| p.file.clone()).collect()
+    pub fn pages(&self) -> &[Page] {
+        self.pages.as_slice()
     }
 
     pub fn parse(&self, s: &str) -> Result<Vec<CharPosition>, StringParseError> {
